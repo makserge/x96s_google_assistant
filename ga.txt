@@ -1,0 +1,35 @@
+Может кому-то пригодится: смог настроить вызов голосового ассистента с любого экрана по команде "Ok Google" и команды на русском языке
+
+Стик: 4/32
+Прошивка: текущий обновленный стоковый 9 (X96S_V311_P_20200620-1541)
+Микрофон: PS3 eye через USB
+
+Шаги:
+1. Поставить Root Explorer
+2. Обновить приложение Google из плеймаркета до текущей версии (11.24.10.21.arm)
+3. C помощью Root Explorer перевести /system в RW
+4. C помощью Root Explorer переименовать обновленный APK приложения Google из /data/app/com.google.android.googlequicksearchbox в Velvet.apk
+5. C помощью Root Explorer удалить все из /system/priv-app/Velvet/
+6. C помощью Root Explorer переместить с заменой получившийся Velvet.apk в /system/priv-app/Velvet/
+7. C помощью Root Explorer перевести /vendor в RW
+8. C помощью Root Explorer добавить в /vendor/build.prop
+
+ro.opa.eligible_device=true
+
+9. C помощью Root Explorer изменить в /vendor/build.prop
+
+ro.config.low_ram=true
+
+на
+
+ro.config.low_ram=false
+
+10. C помощью Root Explorer вернуть /system и /vendor в RO
+11. Переключить язык системы на русский язык
+12. В свойствах приложения Google стереть все данные
+13. Перезагрузить стик
+14. Открыть приложение Google и перейти в нем в настройки: Еще -> Настройки -> Голосовой ввод
+15. В настройках голосового ввода поставить языки: Русский (основной). Дополнительно: English (US)
+16. В настройках голосового ввода нажать Voice Match
+16. В разделе Voice Match активировать Ok Google
+17. Должен появиться диалог настройки ассистента с просьбой записать голос
